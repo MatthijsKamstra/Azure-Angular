@@ -26,3 +26,27 @@ ng serve --open
 ## Learning
 
 - https://learn.microsoft.com/en-gb/azure/static-web-apps/getting-started?tabs=angular
+
+small changes
+
+add `staticwebapp.config.json` to the root of this project
+
+```bash
+cd Azure-Angular-Basic # if you are not already in the correct folder
+touch staticwebapp.config.json
+```
+
+copy this in the file
+
+```json
+{
+  "navigationFallback": {
+    "rewrite": "/index.html",
+    "exclude": ["*.{css,scss,js,png,gif,ico,jpg,svg}"]
+  }
+}
+```
+
+## Glossary
+
+SWA = (Azure) Static Web App
