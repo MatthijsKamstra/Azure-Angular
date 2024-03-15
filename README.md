@@ -2,7 +2,7 @@
 
 Create an basic project with Angular CLI
 
-> (at the moment of writing )
+> (at the moment of writing Angular CLI: 17.3.0)
 
 Add routing and use scss (optional) for styling
 
@@ -22,3 +22,7 @@ ng serve --open
 ```
 
 ![](images/angular_17.png)
+
+## Learning
+
+- https://learn.microsoft.com/en-gb/azure/static-web-apps/getting-started?tabs=angular
