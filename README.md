@@ -32,6 +32,13 @@ get the question:
 
 choose "no"
 
+create a build so you know which folder is used (`Azure-Angular-Basic/dist/azure-angular-basic`)
+
+```bash
+cd Azure-Angular-Basic
+ng build
+```
+
 ```bash
 cd Azure-Angular-Basic
 ng serve --open
@@ -78,6 +85,25 @@ problem: https://www.npmjs.com/package/@angular/cli?activeTab=versions
 
 - Github/Azure supports Node.js v16.20.2
 - Angular CLI 17 supports Node.js v18.13
+
+- https://www.npmjs.com/package/@angular/cli/v/16.2.12
+
+```bash
+npm i @angular/cli@16.2.12
+
+```
+
+```bash
+npm uninstall -g @angular/cli
+npm cache clean
+npm install -g @angular/cli@16.2.12
+```
+
+???
+
+```bash
+ng update @angular/cli @angular/core
+```
 
 ## Glossary
 
