@@ -20,6 +20,13 @@ Create an basic project with Angular CLI
 
 > (at the moment of writing Angular CLI: 17.3.0)
 
+Make sure you don't use cli 17 but use 16
+
+```bash
+npm uninstall -g @angular/cli
+npm install -g @angular/cli@16.2.12
+```
+
 Add routing and use scss (optional) for styling
 
 ```bash
@@ -38,6 +45,8 @@ create a build so you know which folder is used (`Azure-Angular-Basic/dist/azure
 cd Azure-Angular-Basic
 ng build
 ```
+
+check "website"
 
 ```bash
 cd Azure-Angular-Basic
@@ -86,12 +95,16 @@ problem: https://www.npmjs.com/package/@angular/cli?activeTab=versions
 - Github/Azure supports Node.js v16.20.2
 - Angular CLI 17 supports Node.js v18.13
 
+Seems that Angular 17 uses a to high node version, so we need to downgrade de cli
+
 - https://www.npmjs.com/package/@angular/cli/v/16.2.12
 
 ```bash
 npm i @angular/cli@16.2.12
 
 ```
+
+downgrade global
 
 ```bash
 npm uninstall -g @angular/cli
