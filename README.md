@@ -18,9 +18,11 @@ This repository aims to offer a simplified version of Microsoft's Angular tutori
 
 Create an basic project with Angular CLI
 
-> (at the moment of writing Angular CLI: 17.3.0)
+> at the moment of writing Angular CLI: 17.3.0
 
-Make sure you don't use cli 17 but use 16
+Make sure you don't use Angular CLI 17 but use Angular CLI 16
+
+[Read more about Angular CLI v16 vs v17](#error)
 
 ```bash
 npm uninstall -g @angular/cli
@@ -33,44 +35,41 @@ Add routing and use scss (optional) for styling
 ng new Azure-Angular-Basic --routing true --style scss
 ```
 
-get the question:
-
-- Do you want to enable Server-Side Rendering (SSR) and Static Site Generation (SSG/Prerendering)?
-
-choose "no"
-
-create a build so you know which folder is used (`Azure-Angular-Basic/dist/azure-angular-basic`)
+create a build so you know which folder is used (in this case it will be: `Azure-Angular-Basic/dist/azure-angular-basic`)
 
 ```bash
 cd Azure-Angular-Basic
 ng build
 ```
 
-check "website"
+Check generated "website"
 
 ```bash
 cd Azure-Angular-Basic
 ng serve --open
 ```
 
-![](images/angular_17.png)
+<!-- ![](images/angular_17.png) -->
+
+![](images/angular_16.png)
 
 ## Learning
 
-- https://learn.microsoft.com/en-gb/azure/static-web-apps/getting-started?tabs=angular
+The following urls help you with the build for Azure... we are not going to use the code, but it's valueable information.
 
+- https://learn.microsoft.com/en-gb/azure/static-web-apps/getting-started?tabs=angular
 - https://github.com/staticwebdev/angular-basic
 
-small changes
+### Small changes
 
-add `staticwebapp.config.json` to the root of this project
+Add `staticwebapp.config.json` to the root of this project
 
 ```bash
 cd Azure-Angular-Basic # if you are not already in the correct folder
 touch staticwebapp.config.json
 ```
 
-copy this in the file
+Copy the data below into this file
 
 ```json
 {
@@ -81,16 +80,25 @@ copy this in the file
 }
 ```
 
+[Read more about the fallback routes](https://learn.microsoft.com/en-us/azure/static-web-apps/configuration#fallback-routes)
+
+<div id="error" ></div>
+
 ## Build errors
 
-```
+When you build with Angular CLI 17, you create with a minimum Node.js version of v18.13.
+And that will not build on Github Actions
+
+Read the error message below:
+
+```bash
 Node.js version v16.20.2 detected.
 The Angular CLI requires a minimum Node.js version of v18.13.
 
 Please update your Node.js version or visit https://nodejs.org/ for additional instructions.
 ```
 
-problem: https://www.npmjs.com/package/@angular/cli?activeTab=versions
+The problem is relate to the versions: https://www.npmjs.com/package/@angular/cli?activeTab=versions
 
 - Github/Azure supports Node.js v16.20.2
 - Angular CLI 17 supports Node.js v18.13
@@ -101,21 +109,13 @@ Seems that Angular 17 uses a to high node version, so we need to downgrade de cl
 
 ```bash
 npm i @angular/cli@16.2.12
-
 ```
 
 downgrade global
 
 ```bash
 npm uninstall -g @angular/cli
-npm cache clean
 npm install -g @angular/cli@16.2.12
-```
-
-???
-
-```bash
-ng update @angular/cli @angular/core
 ```
 
 ## Glossary
